@@ -15,10 +15,10 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true, load: [config] }),
-    //TypeOrmModule.forRootAsync({
-    //  imports: [ConfigModule],
-    //  useClass: DatabaseConfig,
-    //}),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useClass: DatabaseConfig,
+    }),
     MailerModule.forRootAsync({
       useFactory: () => ({
         transport: {
