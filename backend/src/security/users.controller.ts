@@ -11,3 +11,15 @@ export class UsersController {
   }
 
 }
+
+@Controller('api/users')
+export class UsersController2 {
+  constructor() {}
+
+  @Get('get')
+  async checkDuplicateEmail() {
+    //const response = await this.userService.checkDuplicateEmail(email);
+    return { id: 'hello backend api!!' };
+  }
+
+}
